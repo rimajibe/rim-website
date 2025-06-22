@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/rim-website/static/css/main.e0789035.css",
-    "main.js": "/rim-website/static/js/main.38aaa53e.js",
-    "static/js/453.b2ffb430.chunk.js": "/rim-website/static/js/453.b2ffb430.chunk.js",
-    "static/media/Services_Prise_et_perte_de_poids.png": "/rim-website/static/media/Services_Prise_et_perte_de_poids.df6df98bf4798dc2be36.png",
-    "static/media/First_Picture.jpg": "/rim-website/static/media/First_Picture.2c7ed0645e5237ddd230.jpg",
-    "static/media/rim.jpg": "/rim-website/static/media/rim.20a16618ff27b7d9f599.jpg",
-    "static/media/extra3.jpg": "/rim-website/static/media/extra3.77d571998a6b5ed531a4.jpg",
-    "static/media/Services_Nutrition_thérapeutique.jpg": "/rim-website/static/media/Services_Nutrition_thérapeutique.43219b484de8fc5bc827.jpg",
-    "static/media/First_Picture.webp": "/rim-website/static/media/First_Picture.94f5569c4f3e68ad071f.webp",
-    "static/media/extra_1.webp": "/rim-website/static/media/extra_1.b643b4bb0573e51a8e22.webp",
-    "static/media/Services_Nutrition_sportive.jpg": "/rim-website/static/media/Services_Nutrition_sportive.02a31c44909353a3f5a2.jpg",
-    "static/media/extra_2.webp": "/rim-website/static/media/extra_2.18ecd0d79e37a3e7acbf.webp",
-    "static/media/rim.webp": "/rim-website/static/media/rim.334495a5b8927ee50a9e.webp",
-    "static/media/Services_Nutrition_thérapeutique.webp": "/rim-website/static/media/Services_Nutrition_thérapeutique.6ff9b6d5fc87b33a9e6c.webp",
-    "static/media/Services_Prise_et_perte_de_poids.webp": "/rim-website/static/media/Services_Prise_et_perte_de_poids.1b4972766721fb358b59.webp",
-    "static/media/Services_Nutrition_sportive.webp": "/rim-website/static/media/Services_Nutrition_sportive.54657c2c832afc16a2e6.webp",
-    "index.html": "/rim-website/index.html",
-    "main.e0789035.css.map": "/rim-website/static/css/main.e0789035.css.map",
-    "main.38aaa53e.js.map": "/rim-website/static/js/main.38aaa53e.js.map",
-    "453.b2ffb430.chunk.js.map": "/rim-website/static/js/453.b2ffb430.chunk.js.map"
+    "main.css": "/static/css/main.e0789035.css",
+    "main.js": "/static/js/main.9904b47f.js",
+    "static/js/453.b2ffb430.chunk.js": "/static/js/453.b2ffb430.chunk.js",
+    "static/media/Services_Prise_et_perte_de_poids.png": "/static/media/Services_Prise_et_perte_de_poids.df6df98bf4798dc2be36.png",
+    "static/media/First_Picture.jpg": "/static/media/First_Picture.2c7ed0645e5237ddd230.jpg",
+    "static/media/rim.jpg": "/static/media/rim.20a16618ff27b7d9f599.jpg",
+    "static/media/extra3.jpg": "/static/media/extra3.77d571998a6b5ed531a4.jpg",
+    "static/media/Services_Nutrition_thérapeutique.jpg": "/static/media/Services_Nutrition_thérapeutique.43219b484de8fc5bc827.jpg",
+    "static/media/First_Picture.webp": "/static/media/First_Picture.94f5569c4f3e68ad071f.webp",
+    "static/media/extra_1.webp": "/static/media/extra_1.b643b4bb0573e51a8e22.webp",
+    "static/media/Services_Nutrition_sportive.jpg": "/static/media/Services_Nutrition_sportive.02a31c44909353a3f5a2.jpg",
+    "static/media/extra_2.webp": "/static/media/extra_2.18ecd0d79e37a3e7acbf.webp",
+    "static/media/rim.webp": "/static/media/rim.334495a5b8927ee50a9e.webp",
+    "static/media/Services_Nutrition_thérapeutique.webp": "/static/media/Services_Nutrition_thérapeutique.6ff9b6d5fc87b33a9e6c.webp",
+    "static/media/Services_Prise_et_perte_de_poids.webp": "/static/media/Services_Prise_et_perte_de_poids.1b4972766721fb358b59.webp",
+    "static/media/Services_Nutrition_sportive.webp": "/static/media/Services_Nutrition_sportive.54657c2c832afc16a2e6.webp",
+    "index.html": "/index.html",
+    "main.e0789035.css.map": "/static/css/main.e0789035.css.map",
+    "main.9904b47f.js.map": "/static/js/main.9904b47f.js.map",
+    "453.b2ffb430.chunk.js.map": "/static/js/453.b2ffb430.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e0789035.css",
-    "static/js/main.38aaa53e.js"
+    "static/js/main.9904b47f.js"
   ]
 }
