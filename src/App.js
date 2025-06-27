@@ -121,7 +121,7 @@ const Header = ({ scrolled, isMenuOpen, setIsMenuOpen, onNavigate, currentPage }
           <button onClick={() => handleNavigation('qui-suis-je')} className={`${scrolled ? 'text-[#3D5919]' : 'text-white'} hover:text-[#D6E2B4] transition-colors montserrat-medium bg-transparent border-none cursor-pointer`}>Qui suis-je ?</button>
           <button onClick={() => onNavigate('resources')} className={`${scrolled ? 'text-[#3D5919]' : 'text-white'} hover:text-[#D6E2B4] transition-colors montserrat-medium bg-transparent border-none cursor-pointer`}>Ressources</button>
           <button onClick={() => onNavigate('blog')} className={`${scrolled ? 'text-[#3D5919]' : 'text-white'} hover:text-[#D6E2B4] transition-colors montserrat-medium bg-transparent border-none cursor-pointer`}>Blog</button>
-          <button onClick={() => handleNavigation('rendez-vous')} className="bg-[#3D5919] text-white px-6 py-2 rounded-full hover:bg-[#2A3F0F] transition-colors montserrat-medium border-none cursor-pointer">Rendez-vous</button>
+          <button onClick={() => handleNavigation('rendez-vous')} className="bg-[#3D5919] text-white px-6 py-2 rounded-full hover:bg-[#2A3F0F] transition-colors montserrat-medium border-none cursor-pointer">CONSULTATION GRATUITE</button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -139,7 +139,7 @@ const Header = ({ scrolled, isMenuOpen, setIsMenuOpen, onNavigate, currentPage }
             <button onClick={() => handleNavigation('qui-suis-je')} className="block w-full text-left py-2 text-[#3D5919] montserrat-medium bg-transparent border-none cursor-pointer">Qui suis-je ?</button>
             <button onClick={() => { onNavigate('resources'); handleMenuItemClick(); }} className="block w-full text-left py-2 text-[#3D5919] montserrat-medium bg-transparent border-none cursor-pointer">Ressources</button>
             <button onClick={() => { onNavigate('blog'); handleMenuItemClick(); }} className="block w-full text-left py-2 text-[#3D5919] montserrat-medium bg-transparent border-none cursor-pointer">Blog</button>
-            <button onClick={() => handleNavigation('rendez-vous')} className="block w-full py-2 bg-[#3D5919] text-white text-center rounded-full montserrat-medium border-none cursor-pointer">Rendez-vous</button>
+            <button onClick={() => handleNavigation('rendez-vous')} className="block w-full py-2 bg-[#3D5919] text-white text-center rounded-full montserrat-medium border-none cursor-pointer">CONSULTATION GRATUITE</button>
           </div>
         </div>
       )}
@@ -271,10 +271,7 @@ const PhilosophySection = () => {
             Dt. Rim Ajibe
           </blockquote>
           <div className="text-center mt-8">
-            <button onClick={() => window.open('https://calendly.com/dieteticienne-ajibe-rim/consultation-gratuite?primary_color=3D5919&text_color=000000&background_color=ffffff&hide_event_type_details=1&hide_gdpr_banner=1', '_blank')} className="bg-[#D6E2B4] text-[#3D5919] px-4 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-lg hover:bg-white transition-all font-bold montserrat-medium border-none cursor-pointer">
-              <span className="hidden sm:inline">Je prends mon rendez-vous !</span>
-              <span className="sm:hidden">Rendez-vous</span>
-            </button>
+            <button onClick={() => window.open('https://calendly.com/dieteticienne-ajibe-rim/consultation-gratuite?primary_color=3D5919&text_color=000000&background_color=ffffff&hide_event_type_details=1&hide_gdpr_banner=1', '_blank')} className="bg-[#D6E2B4] text-[#3D5919] px-4 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-lg hover:bg-white transition-all font-bold montserrat-medium border-none cursor-pointer">CONSULTATION GRATUITE</button>
           </div>
         </div>
       </div>
@@ -563,9 +560,7 @@ const BenefitsSection = () => {
           </div>
         </div>
         <div className="text-center mt-12">
-          <button onClick={() => window.open('https://calendly.com/dieteticienne-ajibe-rim/consultation-gratuite?primary_color=3D5919&text_color=000000&background_color=ffffff&hide_event_type_details=1&hide_gdpr_banner=1', '_blank')} className="bg-[#3D5919] text-[#FDFCE9] px-8 py-4 rounded-full text-lg hover:bg-[#3D5919] hover:text-white transition-all font-bold montserrat-medium border-none cursor-pointer">
-            Faites le premier pas !
-          </button>
+          <button onClick={() => window.open('https://calendly.com/dieteticienne-ajibe-rim/consultation-gratuite?primary_color=3D5919&text_color=000000&background_color=ffffff&hide_event_type_details=1&hide_gdpr_banner=1', '_blank')} className="bg-[#3D5919] text-[#FDFCE9] px-8 py-4 rounded-full text-lg hover:bg-[#3D5919] hover:text-white transition-all font-bold montserrat-medium border-none cursor-pointer">CONSULTATION GRATUITE</button>
         </div>
       </div>
     </section>
@@ -625,9 +620,7 @@ const ProcessSection = () => {
           </div>
         </div>
         <div className="text-center mt-12">
-          <button onClick={() => window.open('https://calendly.com/dieteticienne-ajibe-rim/consultation-gratuite?primary_color=3D5919&text_color=000000&background_color=ffffff&hide_event_type_details=1&hide_gdpr_banner=1', '_blank')} className="bg-[#FDFCE9] text-[#3D5919] px-8 py-4 rounded-full text-lg hover:bg-white hover:text-[#3D5919] transition-all font-bold montserrat-medium border-none cursor-pointer">
-            Faites le premier pas !
-          </button>
+          <button onClick={() => window.open('https://calendly.com/dieteticienne-ajibe-rim/consultation-gratuite?primary_color=3D5919&text_color=000000&background_color=ffffff&hide_event_type_details=1&hide_gdpr_banner=1', '_blank')} className="bg-[#FDFCE9] text-[#3D5919] px-8 py-4 rounded-full text-lg hover:bg-white hover:text-[#3D5919] transition-all font-bold montserrat-medium border-none cursor-pointer">CONSULTATION GRATUITE</button>
         </div>
       </div>
     </section>
@@ -662,7 +655,7 @@ const PricingSection = () => {
                 onClick={() => window.open('https://calendly.com/dieteticienne-ajibe-rim/consultation-gratuite?primary_color=3D5919&text_color=000000&background_color=ffffff&hide_event_type_details=1&hide_gdpr_banner=1', '_blank')}
                 className={`block w-full py-3 px-6 rounded-full font-semibold transition-colors montserrat-medium ${plan.popular ? 'bg-[#3D5919] text-white hover:bg-[#2A3F0F]' : 'bg-white text-[#3D5919] hover:bg-gray-100'}`}
               >
-                Choisir
+                CONSULTATION GRATUITE
               </button>
             </div>
           ))}
@@ -681,9 +674,7 @@ const PricingSection = () => {
                 onClick={() => window.open('https://calendly.com/dieteticienne-ajibe-rim/consultation-gratuite?primary_color=3D5919&text_color=000000&background_color=ffffff&hide_event_type_details=1&hide_gdpr_banner=1', '_blank')}
                 className="inline-flex items-center bg-[#3D5919] text-white px-8 py-4 rounded-full text-lg hover:bg-[#2A3F0F] transition-all transform hover:scale-105 font-bold montserrat-medium shadow-lg border-none cursor-pointer"
               >
-                <span className="hidden sm:inline">Je réserve ma consultation de découverte gratuite !</span>
-                <span className="sm:hidden">Consultation gratuite</span>
-                <Star className="w-5 h-5 ml-2" />
+                CONSULTATION GRATUITE
               </button>
             </div>
           </div>
@@ -774,10 +765,7 @@ const FAQSection = () => {
           ))}
         </div>
         <div className="text-center mt-12">
-          <button onClick={() => window.open('https://calendly.com/dieteticienne-ajibe-rim/consultation-gratuite?primary_color=3D5919&text_color=000000&background_color=ffffff&hide_event_type_details=1&hide_gdpr_banner=1', '_blank')} className="bg-[#3D5919] text-white px-4 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-lg hover:bg-[#2A3F0F] transition-all transform hover:scale-105 montserrat-medium border-none cursor-pointer">
-            <span className="hidden sm:inline">Réservez votre consultation gratuite !</span>
-            <span className="sm:hidden">Consultation gratuite</span>
-          </button>
+          <button onClick={() => window.open('https://calendly.com/dieteticienne-ajibe-rim/consultation-gratuite?primary_color=3D5919&text_color=000000&background_color=ffffff&hide_event_type_details=1&hide_gdpr_banner=1', '_blank')} className="bg-[#3D5919] text-white px-4 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-lg hover:bg-[#2A3F0F] transition-all transform hover:scale-105 montserrat-medium border-none cursor-pointer">CONSULTATION GRATUITE</button>
         </div>
       </div>
     </section>
@@ -882,8 +870,7 @@ const TestimonialsSection = () => {
             onClick={() => window.open('https://calendly.com/dieteticienne-ajibe-rim/consultation-gratuite?primary_color=3D5919&text_color=000000&background_color=ffffff&hide_event_type_details=1&hide_gdpr_banner=1', '_blank')}
             className="inline-block bg-gradient-to-r from-[#3D5919] to-[#2A3F0F] text-white px-8 py-4 rounded-full text-lg hover:shadow-2xl transition-all transform hover:scale-105 font-bold montserrat-medium border-none cursor-pointer"
           >
-            <span className="hidden sm:inline">Je commence mon accompagnement !</span>
-            <span className="sm:hidden">Commencer !</span>
+            CONSULTATION GRATUITE
           </button>
         </div>
       </div>
@@ -1135,10 +1122,7 @@ const BlogSection = () => {
         )}
 
         <div className="text-center">
-          <button onClick={() => window.open('https://calendly.com/dieteticienne-ajibe-rim/consultation-gratuite?primary_color=3D5919&text_color=000000&background_color=ffffff&hide_event_type_details=1&hide_gdpr_banner=1', '_blank')} className="bg-[#3D5919] text-white px-4 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-lg hover:bg-[#2A3F0F] transition-all transform hover:scale-105 montserrat-medium border-none cursor-pointer">
-            <span className="hidden sm:inline">Réservez votre consultation gratuite !</span>
-            <span className="sm:hidden">Consultation gratuite</span>
-          </button>
+          <button onClick={() => window.open('https://calendly.com/dieteticienne-ajibe-rim/consultation-gratuite?primary_color=3D5919&text_color=000000&background_color=ffffff&hide_event_type_details=1&hide_gdpr_banner=1', '_blank')} className="bg-[#3D5919] text-white px-4 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-lg hover:bg-[#2A3F0F] transition-all transform hover:scale-105 montserrat-medium border-none cursor-pointer">CONSULTATION GRATUITE</button>
         </div>
       </div>
 
