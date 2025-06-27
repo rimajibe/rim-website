@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.e0789035.css",
-    "main.js": "/static/js/main.9904b47f.js",
+    "main.css": "/static/css/main.c0593fdf.css",
+    "main.js": "/static/js/main.4fb370e9.js",
     "static/js/453.b2ffb430.chunk.js": "/static/js/453.b2ffb430.chunk.js",
     "static/media/Services_Prise_et_perte_de_poids.png": "/static/media/Services_Prise_et_perte_de_poids.df6df98bf4798dc2be36.png",
     "static/media/First_Picture.jpg": "/static/media/First_Picture.2c7ed0645e5237ddd230.jpg",
@@ -17,12 +17,12 @@
     "static/media/Services_Prise_et_perte_de_poids.webp": "/static/media/Services_Prise_et_perte_de_poids.1b4972766721fb358b59.webp",
     "static/media/Services_Nutrition_sportive.webp": "/static/media/Services_Nutrition_sportive.54657c2c832afc16a2e6.webp",
     "index.html": "/index.html",
-    "main.e0789035.css.map": "/static/css/main.e0789035.css.map",
-    "main.9904b47f.js.map": "/static/js/main.9904b47f.js.map",
+    "main.c0593fdf.css.map": "/static/css/main.c0593fdf.css.map",
+    "main.4fb370e9.js.map": "/static/js/main.4fb370e9.js.map",
     "453.b2ffb430.chunk.js.map": "/static/js/453.b2ffb430.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e0789035.css",
-    "static/js/main.9904b47f.js"
+    "static/css/main.c0593fdf.css",
+    "static/js/main.4fb370e9.js"
   ]
 }
