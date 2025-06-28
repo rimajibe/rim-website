@@ -1,6 +1,7 @@
 {
   "short_name": "Dt. Rim Ajibe",
-  "name": "Dt. Rim Ajibe - Diététicienne & Nutritionniste",
+  "name": "Dt. Rim Ajibe - Diététicienne Clinicienne & Nutritionniste",
+  "description": "Diététicienne Clinicienne & Nutritionniste spécialisée en nutrition thérapeutique, sportive et gestion du poids. Consultation de découverte gratuite.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -10,17 +11,23 @@
     {
       "src": "logo192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "any maskable"
     },
     {
       "src": "logo512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "any maskable"
     }
   ],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#3D5919",
   "background_color": "#FDFCE9",
-  "description": "Diététicienne Clinicienne & Nutritionniste - Consultation de découverte gratuite"
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "fr",
+  "dir": "ltr",
+  "categories": ["health", "medical", "lifestyle", "fitness", "nutrition", "dietetics", "dietician", "nutritionist", "nutrition therapy", "nutrition sportive", "gestion du poids", "consultation nutrition", "consultation gratuite", "diététique", "santé", "bien-être", "maroc", "casablanca", "dt. rim ajibe"]
 }
