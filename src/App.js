@@ -655,7 +655,7 @@ const PricingSection = () => {
                 onClick={() => window.open('https://calendly.com/dieteticienne-ajibe-rim/consultation-gratuite?primary_color=3D5919&text_color=000000&background_color=ffffff&hide_event_type_details=1&hide_gdpr_banner=1', '_blank')}
                 className={`block w-full py-3 px-6 rounded-full font-semibold transition-colors montserrat-medium ${plan.popular ? 'bg-[#3D5919] text-white hover:bg-[#2A3F0F]' : 'bg-white text-[#3D5919] hover:bg-gray-100'}`}
               >
-                CONSULTATION GRATUITE
+                Choisir
               </button>
             </div>
           ))}
