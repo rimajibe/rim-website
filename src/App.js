@@ -121,7 +121,7 @@ const Header = ({ scrolled, isMenuOpen, setIsMenuOpen, onNavigate, currentPage }
           <button onClick={() => handleNavigation('qui-suis-je')} className={`${scrolled ? 'text-[#3D5919]' : 'text-white'} hover:text-[#D6E2B4] transition-colors montserrat-medium bg-transparent border-none cursor-pointer`}>Qui suis-je ?</button>
           <button onClick={() => onNavigate('resources')} className={`${scrolled ? 'text-[#3D5919]' : 'text-white'} hover:text-[#D6E2B4] transition-colors montserrat-medium bg-transparent border-none cursor-pointer`}>Ressources</button>
           <button onClick={() => onNavigate('blog')} className={`${scrolled ? 'text-[#3D5919]' : 'text-white'} hover:text-[#D6E2B4] transition-colors montserrat-medium bg-transparent border-none cursor-pointer`}>Blog</button>
-          <button onClick={() => handleNavigation('rendez-vous')} className="bg-[#3D5919] text-white px-6 py-2 rounded-full hover:bg-[#2A3F0F] transition-colors montserrat-medium border-none cursor-pointer">CONSULTATION GRATUITE</button>
+          <button onClick={() => handleNavigation('rendez-vous')} className="bg-[#3D5919] text-white px-6 py-2 rounded-full hover:bg-[#2A3F0F] transition-colors montserrat-medium border-none cursor-pointer">Rendez-vous</button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -139,7 +139,7 @@ const Header = ({ scrolled, isMenuOpen, setIsMenuOpen, onNavigate, currentPage }
             <button onClick={() => handleNavigation('qui-suis-je')} className="block w-full text-left py-2 text-[#3D5919] montserrat-medium bg-transparent border-none cursor-pointer">Qui suis-je ?</button>
             <button onClick={() => { onNavigate('resources'); handleMenuItemClick(); }} className="block w-full text-left py-2 text-[#3D5919] montserrat-medium bg-transparent border-none cursor-pointer">Ressources</button>
             <button onClick={() => { onNavigate('blog'); handleMenuItemClick(); }} className="block w-full text-left py-2 text-[#3D5919] montserrat-medium bg-transparent border-none cursor-pointer">Blog</button>
-            <button onClick={() => handleNavigation('rendez-vous')} className="block w-full py-2 bg-[#3D5919] text-white text-center rounded-full montserrat-medium border-none cursor-pointer">CONSULTATION GRATUITE</button>
+            <button onClick={() => handleNavigation('rendez-vous')} className="block w-full py-2 bg-[#3D5919] text-white text-center rounded-full montserrat-medium border-none cursor-pointer">Rendez-vous</button>
           </div>
         </div>
       )}
@@ -271,7 +271,7 @@ const PhilosophySection = () => {
             Dt. Rim Ajibe
           </blockquote>
           <div className="text-center mt-8">
-            <button onClick={() => window.open('https://calendly.com/dieteticienne-ajibe-rim/consultation-gratuite?primary_color=3D5919&text_color=000000&background_color=ffffff&hide_event_type_details=1&hide_gdpr_banner=1', '_blank')} className="bg-[#D6E2B4] text-[#3D5919] px-4 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-lg hover:bg-white transition-all font-bold montserrat-medium border-none cursor-pointer">CONSULTATION GRATUITE</button>
+            <button onClick={() => window.open('https://calendly.com/dieteticienne-ajibe-rim/consultation-gratuite?primary_color=3D5919&text_color=000000&background_color=ffffff&hide_event_type_details=1&hide_gdpr_banner=1', '_blank')} className="bg-[#D6E2B4] text-[#3D5919] px-4 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-lg hover:bg-white transition-all font-bold montserrat-medium border-none cursor-pointer">Je prends mon rendez-vous</button>
           </div>
         </div>
       </div>
@@ -560,67 +560,7 @@ const BenefitsSection = () => {
           </div>
         </div>
         <div className="text-center mt-12">
-          <button onClick={() => window.open('https://calendly.com/dieteticienne-ajibe-rim/consultation-gratuite?primary_color=3D5919&text_color=000000&background_color=ffffff&hide_event_type_details=1&hide_gdpr_banner=1', '_blank')} className="bg-[#3D5919] text-[#FDFCE9] px-8 py-4 rounded-full text-lg hover:bg-[#3D5919] hover:text-white transition-all font-bold montserrat-medium border-none cursor-pointer">CONSULTATION GRATUITE</button>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-// Process Section Component
-const ProcessSection = () => {
-  const processSteps = [
-    { 
-      number: "1", 
-      title: "Consultation de Découverte GRATUITE", 
-      description: "Au cabinet ou à distance — c'est la première étape pour vérifier si je peux réellement vous aider. Cette étape est obligatoire !" 
-    },
-    { 
-      number: "2", 
-      title: "Mini Questionnaire", 
-      description: "Vous remplissez un formulaire pour m'aider à bien comprendre votre situation en détail." 
-    },
-    { 
-      number: "3", 
-      title: "Confirmation du rendez-vous", 
-      description: "Un message de rappel vous est envoyé la veille. Il suffit d'y répondre avant 20h pour confirmer votre présence. AUTREMENT LE RENDEZ-VOUS SERA ANNULÉ." 
-    },
-    { 
-      number: "4", 
-      title: "Paiement et Lancement du Suivi", 
-      description: "Après la consultation de découverte, si mon accompagnement est adapté à vos besoins, vous validez le paiement et on commence !" 
-    },
-    { 
-      number: "5", 
-      title: "Suivi tous les 15 jours", 
-      description: "Toutes les deux semaines, on se retrouve pour faire le point ensemble. Et entre-temps, je reste disponible 5j/7 pour vous accompagner au moindre doute ou besoin d'ajustement." 
-    }
-  ];
-
-  return (
-    <section className="py-20 bg-[#D6E2B4]">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-bold text-[#3D5919] text-center mb-12 playfair-display">Processus</h2>
-        <div className="max-w-4xl mx-auto">
-          <div className="relative">
-            {/* Curved line */}
-            <div className="absolute left-6 top-8 bottom-8 w-px bg-gradient-to-b from-[#FDFCE9] via-[#3D5919] to-[#FDFCE9] hidden md:block rounded-full"></div>
-            
-            {processSteps.map((step, index) => (
-              <div key={index} className="flex mb-8 animate-fade-in relative" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="flex-shrink-0 w-12 h-12 bg-[#3D5919] text-white rounded-full flex items-center justify-center font-bold text-xl mr-4 relative z-10">
-                  {step.number}
-                </div>
-                <div className="flex-grow">
-                  <h3 className="text-xl font-bold text-[#3D5919] mb-2 playfair-display">{step.title}</h3>
-                  <p className="text-gray-700 montserrat-medium">{step.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="text-center mt-12">
-          <button onClick={() => window.open('https://calendly.com/dieteticienne-ajibe-rim/consultation-gratuite?primary_color=3D5919&text_color=000000&background_color=ffffff&hide_event_type_details=1&hide_gdpr_banner=1', '_blank')} className="bg-[#FDFCE9] text-[#3D5919] px-8 py-4 rounded-full text-lg hover:bg-white hover:text-[#3D5919] transition-all font-bold montserrat-medium border-none cursor-pointer">CONSULTATION GRATUITE</button>
+          <button onClick={() => window.open('https://calendly.com/dieteticienne-ajibe-rim/consultation-gratuite?primary_color=3D5919&text_color=000000&background_color=ffffff&hide_event_type_details=1&hide_gdpr_banner=1', '_blank')} className="bg-[#3D5919] text-[#FDFCE9] px-8 py-4 rounded-full text-lg hover:bg-[#3D5919] hover:text-white transition-all font-bold montserrat-medium border-none cursor-pointer">Je prends mon rendez-vous</button>
         </div>
       </div>
     </section>
@@ -674,7 +614,7 @@ const PricingSection = () => {
                 onClick={() => window.open('https://calendly.com/dieteticienne-ajibe-rim/consultation-gratuite?primary_color=3D5919&text_color=000000&background_color=ffffff&hide_event_type_details=1&hide_gdpr_banner=1', '_blank')}
                 className="inline-flex items-center bg-[#3D5919] text-white px-8 py-4 rounded-full text-lg hover:bg-[#2A3F0F] transition-all transform hover:scale-105 font-bold montserrat-medium shadow-lg border-none cursor-pointer"
               >
-                CONSULTATION GRATUITE
+                Je prends mon rendez-vous
               </button>
             </div>
           </div>
@@ -765,7 +705,7 @@ const FAQSection = () => {
           ))}
         </div>
         <div className="text-center mt-12">
-          <button onClick={() => window.open('https://calendly.com/dieteticienne-ajibe-rim/consultation-gratuite?primary_color=3D5919&text_color=000000&background_color=ffffff&hide_event_type_details=1&hide_gdpr_banner=1', '_blank')} className="bg-[#3D5919] text-white px-4 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-lg hover:bg-[#2A3F0F] transition-all transform hover:scale-105 montserrat-medium border-none cursor-pointer">CONSULTATION GRATUITE</button>
+          <button onClick={() => window.open('https://calendly.com/dieteticienne-ajibe-rim/consultation-gratuite?primary_color=3D5919&text_color=000000&background_color=ffffff&hide_event_type_details=1&hide_gdpr_banner=1', '_blank')} className="bg-[#3D5919] text-white px-4 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-lg hover:bg-[#2A3F0F] transition-all transform hover:scale-105 montserrat-medium border-none cursor-pointer">Je prends mon rendez-vous</button>
         </div>
       </div>
     </section>
@@ -870,7 +810,7 @@ const TestimonialsSection = () => {
             onClick={() => window.open('https://calendly.com/dieteticienne-ajibe-rim/consultation-gratuite?primary_color=3D5919&text_color=000000&background_color=ffffff&hide_event_type_details=1&hide_gdpr_banner=1', '_blank')}
             className="inline-block bg-gradient-to-r from-[#3D5919] to-[#2A3F0F] text-white px-8 py-4 rounded-full text-lg hover:shadow-2xl transition-all transform hover:scale-105 font-bold montserrat-medium border-none cursor-pointer"
           >
-            CONSULTATION GRATUITE
+            Je prends mon rendez-vous
           </button>
         </div>
       </div>
@@ -1122,7 +1062,7 @@ const BlogSection = () => {
         )}
 
         <div className="text-center">
-          <button onClick={() => window.open('https://calendly.com/dieteticienne-ajibe-rim/consultation-gratuite?primary_color=3D5919&text_color=000000&background_color=ffffff&hide_event_type_details=1&hide_gdpr_banner=1', '_blank')} className="bg-[#3D5919] text-white px-4 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-lg hover:bg-[#2A3F0F] transition-all transform hover:scale-105 montserrat-medium border-none cursor-pointer">CONSULTATION GRATUITE</button>
+          <button onClick={() => window.open('https://calendly.com/dieteticienne-ajibe-rim/consultation-gratuite?primary_color=3D5919&text_color=000000&background_color=ffffff&hide_event_type_details=1&hide_gdpr_banner=1', '_blank')} className="bg-[#3D5919] text-white px-4 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-lg hover:bg-[#2A3F0F] transition-all transform hover:scale-105 montserrat-medium border-none cursor-pointer">Je prends mon rendez-vous</button>
         </div>
       </div>
 
@@ -1423,8 +1363,6 @@ const App = () => {
             <ServicesSection />
             
             <BenefitsSection />
-            
-            <ProcessSection />
             
             <PricingSection />
             
