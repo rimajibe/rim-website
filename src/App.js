@@ -608,7 +608,7 @@ const PricingSection = () => {
                 Vous hésitez encore ?
               </h3>
               <p className="text-[#3D5919] mb-6 montserrat-medium">
-                Commencez par une consultation de découverte GRATUITE pour déterminer ensemble le meilleur plan pour vous
+                Commencez par une consultation de découverte pour déterminer ensemble le meilleur plan pour vous
               </p>
               <button 
                 onClick={() => window.open('https://calendly.com/dieteticienne-ajibe-rim/consultation-gratuite?primary_color=3D5919&text_color=000000&background_color=ffffff&hide_event_type_details=1&hide_gdpr_banner=1', '_blank')}
@@ -1208,8 +1208,8 @@ const Footer = ({ onNavigate, currentPage }) => {
           {/* Newsletter Column */}
           <div>
             <h4 className="text-lg font-bold mb-3 playfair-display">Contact</h4>
-            <p className="text-gray-300 text-xs mb-4 montserrat-medium">
-              Prenez rendez-vous pour votre consultation gratuite
+            <p className="text-[#3D5919] mb-4 montserrat-medium">
+              Prenez rendez-vous pour votre consultation
             </p>
             <div className="space-y-2">
               <div className="grid grid-cols-2 gap-2">
