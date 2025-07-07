@@ -1208,10 +1208,10 @@ const Footer = ({ onNavigate, currentPage }) => {
           {/* Newsletter Column */}
           <div>
             <h4 className="text-lg font-bold mb-3 playfair-display">Contact</h4>
-            <p className="text-[#3D5919] mb-4 montserrat-medium">
+            <p className="text-gray-300 text-xs mb-4 montserrat-medium">
               Prenez rendez-vous pour votre consultation
             </p>
-            <div className="space-y-2">
+            <div className="space-y-2"> 
               <div className="grid grid-cols-2 gap-2">
                 <input
                   type="text"
