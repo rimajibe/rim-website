@@ -158,26 +158,49 @@
     <!-- Netlify Identity Widget -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          // If we arrived via #recovery_token show the reset dialog
-          if (!user && window.location.hash.includes("recovery_token")) {
-            window.netlifyIdentity.open("recover");
-          }
-          // If we arrived via #invite_token show the signup dialog
-          if (!user && window.location.hash.includes("invite_token")) {
-            window.netlifyIdentity.open("signup");
-          }
-          // If we arrived via #confirmation_token show the login dialog
-          if (!user && window.location.hash.includes("confirmation_token")) {
-            window.netlifyIdentity.open("login");
-          }
-          // After a successful login, redirect editors to the CMS
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
+      console.log("Identity widget script loaded");
+      console.log("Current URL hash:", window.location.hash);
+      
+      // Wait for widget to load
+      window.addEventListener('load', function() {
+        console.log("Window loaded, checking netlifyIdentity:", !!window.netlifyIdentity);
+        
+        if (window.netlifyIdentity) {
+          console.log("Identity widget available");
+          
+          window.netlifyIdentity.on("init", user => {
+            console.log("Identity initialized, user:", user);
+            console.log("Hash contains recovery_token:", window.location.hash.includes("recovery_token"));
+            
+            // If we arrived via #recovery_token show the reset dialog
+            if (!user && window.location.hash.includes("recovery_token")) {
+              console.log("Opening recovery modal");
+              window.netlifyIdentity.open("recover");
+            }
+            // If we arrived via #invite_token show the signup dialog
+            if (!user && window.location.hash.includes("invite_token")) {
+              console.log("Opening signup modal");
+              window.netlifyIdentity.open("signup");
+            }
+            // If we arrived via #confirmation_token show the login dialog
+            if (!user && window.location.hash.includes("confirmation_token")) {
+              console.log("Opening login modal");
+              window.netlifyIdentity.open("login");
+            }
+            
+            // After a successful login, redirect editors to the CMS
+            window.netlifyIdentity.on("login", () => {
+              console.log("User logged in, redirecting to admin");
+              document.location.href = "/admin/";
+            });
           });
-        });
-      }
+          
+          // Initialize the widget
+          window.netlifyIdentity.init();
+        } else {
+          console.error("Netlify Identity widget not available");
+        }
+      });
     </script>
   </body>
 </html>
