@@ -154,5 +154,30 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    
+    <!-- Netlify Identity Widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          // If we arrived via #recovery_token show the reset dialog
+          if (!user && window.location.hash.includes("recovery_token")) {
+            window.netlifyIdentity.open("recover");
+          }
+          // If we arrived via #invite_token show the signup dialog
+          if (!user && window.location.hash.includes("invite_token")) {
+            window.netlifyIdentity.open("signup");
+          }
+          // If we arrived via #confirmation_token show the login dialog
+          if (!user && window.location.hash.includes("confirmation_token")) {
+            window.netlifyIdentity.open("login");
+          }
+          // After a successful login, redirect editors to the CMS
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        });
+      }
+    </script>
   </body>
 </html>
