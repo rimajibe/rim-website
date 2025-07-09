@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Search, Filter, Calendar, Clock, User, Tag, ArrowRight, ChevronLeft, ChevronRight, BookOpen, TrendingUp, Heart, MessageCircle, ChevronDown } from 'lucide-react';
+import posts from './content/blog.json';
 
 const BlogPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -7,13 +8,16 @@ const BlogPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedArticle, setSelectedArticle] = useState(null);
 
-  const articles = [];
+  const [search, setSearch] = useState('');
+  const items = posts
+    .filter(p => p.title.toLowerCase().includes(search.toLowerCase()))
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
 
   const categories = ['Tous'];
   const postsPerPage = 6;
 
   // Filter articles based on search and category
-  const filteredArticles = articles.filter(article => {
+  const filteredArticles = items.filter(article => {
     const matchesSearch = searchTerm === '' || 
                          article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          article.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||

@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { Download, BookOpen, Video, FileText, Heart, Target, Clock, MessageCircle, Star, Users, Check, ChevronDown } from 'lucide-react';
+import resources from './content/resources.json';
 
 const ResourcesPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
-
-  const resources = [];
 
   const categories = [
     { id: 'all', name: 'Tous', icon: BookOpen }

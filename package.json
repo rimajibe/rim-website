@@ -21,7 +21,9 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "optimize-images": "npx imagemin src/*.{jpg,jpeg,png} --out-dir=src/optimized --plugin=mozjpeg --plugin=pngquant --plugin=webp"
+    "optimize-images": "npx imagemin src/*.{jpg,jpeg,png} --out-dir=src/optimized --plugin=mozjpeg --plugin=pngquant --plugin=webp",
+    "generate:content": "node scripts/build-content.js",
+    "prebuild": "npm run generate:content"
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +50,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.21",
     "gh-pages": "^6.3.0",
+    "gray-matter": "^4.0.3",
     "imagemin": "^9.0.1",
     "imagemin-cli": "^8.0.0",
     "imagemin-mozjpeg": "^10.0.0",
