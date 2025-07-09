@@ -193,6 +193,12 @@
               console.log("User logged in, redirecting to admin");
               document.location.href = "/admin/";
             });
+            
+            // After logout, redirect to homepage
+            window.netlifyIdentity.on("logout", () => {
+              console.log("User logged out, redirecting to homepage");
+              document.location.href = "/";
+            });
           });
           
           // Initialize the widget

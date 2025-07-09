@@ -2,14 +2,15 @@
   command = "npm run build"
   publish = "build"
 
-# SPA fallback
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
 # Let /admin work on a single-page host
 [[redirects]]
   from = "/admin/*"
   to = "/admin/index.html"
   status = 200
+
+# SPA fallback - only for routes that don't have file extensions
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
