@@ -77,21 +77,149 @@ const BlogPage = () => {
       {/* Content Section */}
       <section className="py-20 bg-[#FDFCE9]">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#3D5919] mb-6 playfair-display">
-              Contenu en préparation
-            </h2>
-            <p className="text-lg text-gray-700 mb-8 montserrat-medium">
-              Le blog sera bientôt disponible avec des articles nutritionnels, des conseils pratiques et des informations scientifiques pour vous accompagner dans votre parcours santé.
-            </p>
-            <div className="bg-[#D6E2B4] p-6 rounded-lg">
-              <p className="text-[#3D5919] montserrat-medium">
-                Restez connecté pour découvrir nos premiers articles !
+          {currentArticles.length > 0 ? (
+            <>
+              {/* Search and Filter */}
+              <div className="max-w-4xl mx-auto mb-12">
+                <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
+                  <div className="relative flex-1">
+                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                    <input
+                      type="text"
+                      placeholder="Rechercher un article..."
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3D5919] focus:border-transparent"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Blog Posts Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                {currentArticles.map((article, index) => (
+                  <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div className="p-6">
+                      <div className="flex flex-wrap gap-2 mb-3">
+                        {article.tags.map((tag, tagIndex) => (
+                          <span key={tagIndex} className="px-3 py-1 bg-[#D6E2B4] text-[#3D5919] rounded-full text-sm font-medium">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <h3 className="text-xl font-bold text-[#3D5919] mb-3 playfair-display">
+                        {article.title}
+                      </h3>
+                      <p className="text-gray-600 mb-4 line-clamp-3">
+                        {article.excerpt}
+                      </p>
+                      <div className="flex items-center text-sm text-gray-500 mb-4">
+                        <Calendar className="w-4 h-4 mr-2" />
+                        {new Date(article.date).toLocaleDateString('fr-FR')}
+                      </div>
+                      <button
+                        onClick={() => handleReadMore(article)}
+                        className="inline-flex items-center px-4 py-2 bg-[#3D5919] text-white rounded-lg hover:bg-[#2d4214] transition-colors duration-200"
+                      >
+                        Lire plus
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Pagination */}
+              {totalPages > 1 && (
+                <div className="flex justify-center items-center gap-2">
+                  <button
+                    onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                    disabled={currentPage === 1}
+                    className="p-2 rounded-lg border border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    <ChevronLeft className="w-5 h-5" />
+                  </button>
+                  
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                    <button
+                      key={page}
+                      onClick={() => setCurrentPage(page)}
+                      className={`px-4 py-2 rounded-lg ${
+                        currentPage === page
+                          ? 'bg-[#3D5919] text-white'
+                          : 'border border-gray-300 hover:bg-gray-50'
+                      }`}
+                    >
+                      {page}
+                    </button>
+                  ))}
+                  
+                  <button
+                    onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                    disabled={currentPage === totalPages}
+                    className="p-2 rounded-lg border border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    <ChevronRight className="w-5 h-5" />
+                  </button>
+                </div>
+              )}
+            </>
+          ) : (
+            <div className="text-center max-w-2xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#3D5919] mb-6 playfair-display">
+                Contenu en préparation
+              </h2>
+              <p className="text-lg text-gray-700 mb-8 montserrat-medium">
+                Le blog sera bientôt disponible avec des articles nutritionnels, des conseils pratiques et des informations scientifiques pour vous accompagner dans votre parcours santé.
               </p>
+              <div className="bg-[#D6E2B4] p-6 rounded-lg">
+                <p className="text-[#3D5919] montserrat-medium">
+                  Restez connecté pour découvrir nos premiers articles !
+                </p>
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Article Modal */}
+      {selectedArticle && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-lg max-w-4xl w-full max-h-[80vh] overflow-y-auto">
+            <div className="p-6">
+              <div className="flex justify-between items-start mb-4">
+                <h2 className="text-2xl font-bold text-[#3D5919] playfair-display">
+                  {selectedArticle.title}
+                </h2>
+                <button
+                  onClick={closeModal}
+                  className="text-gray-500 hover:text-gray-700 text-2xl"
+                >
+                  ×
+                </button>
+              </div>
+              <div className="flex items-center text-sm text-gray-500 mb-4">
+                <Calendar className="w-4 h-4 mr-2" />
+                {new Date(selectedArticle.date).toLocaleDateString('fr-FR')}
+              </div>
+              <div className="flex flex-wrap gap-2 mb-6">
+                {selectedArticle.tags.map((tag, tagIndex) => (
+                  <span key={tagIndex} className="px-3 py-1 bg-[#D6E2B4] text-[#3D5919] rounded-full text-sm font-medium">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <div className="prose prose-lg max-w-none">
+                {selectedArticle.body.split('\n').map((paragraph, index) => (
+                  <p key={index} className="mb-4 text-gray-700">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      )}
 
       <style jsx>{`
         .playfair-display {

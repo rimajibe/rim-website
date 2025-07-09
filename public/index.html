@@ -194,10 +194,11 @@
               document.location.href = "/admin/";
             });
             
-            // After logout, redirect to homepage
+            // After logout, redirect to homepage and reload
             window.netlifyIdentity.on("logout", () => {
               console.log("User logged out, redirecting to homepage");
-              document.location.href = "/";
+              // Use window.location.replace to avoid back button issues
+              window.location.replace("/");
             });
           });
           
