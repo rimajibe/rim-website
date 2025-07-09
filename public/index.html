@@ -175,7 +175,7 @@
             // If we arrived via #recovery_token show the reset dialog
             if (!user && window.location.hash.includes("recovery_token")) {
               console.log("Opening recovery modal");
-              window.netlifyIdentity.open("recover");
+              window.netlifyIdentity.open("recovery");
             }
             // If we arrived via #invite_token show the signup dialog
             if (!user && window.location.hash.includes("invite_token")) {
