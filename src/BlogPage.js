@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Search, Filter, Calendar, Clock, User, Tag, ArrowRight, ChevronLeft, ChevronRight, BookOpen, TrendingUp, Heart, MessageCircle, ChevronDown } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
 import posts from './content/blog.json';
 
 const BlogPage = () => {
@@ -209,12 +210,35 @@ const BlogPage = () => {
                   </span>
                 ))}
               </div>
-              <div className="prose prose-lg max-w-none">
-                {selectedArticle.body.split('\n').map((paragraph, index) => (
-                  <p key={index} className="mb-4 text-gray-700">
-                    {paragraph}
-                  </p>
-                ))}
+              <div className="prose prose-lg max-w-none text-gray-700">
+                <ReactMarkdown
+                  components={{
+                    h1: ({children}) => <h1 className="text-2xl font-bold text-[#3D5919] mb-4 playfair-display">{children}</h1>,
+                    h2: ({children}) => <h2 className="text-xl font-bold text-[#3D5919] mb-3 playfair-display">{children}</h2>,
+                    h3: ({children}) => <h3 className="text-lg font-bold text-[#3D5919] mb-2 playfair-display">{children}</h3>,
+                    p: ({children}) => <p className="mb-4 text-gray-700 leading-relaxed">{children}</p>,
+                    strong: ({children}) => <strong className="font-semibold text-[#3D5919]">{children}</strong>,
+                    em: ({children}) => <em className="italic text-gray-600">{children}</em>,
+                    ul: ({children}) => <ul className="list-disc list-inside mb-4 text-gray-700">{children}</ul>,
+                    ol: ({children}) => <ol className="list-decimal list-inside mb-4 text-gray-700">{children}</ol>,
+                    li: ({children}) => <li className="mb-1">{children}</li>,
+                    img: ({src, alt, title}) => (
+                      <img 
+                        src={src} 
+                        alt={alt} 
+                        title={title}
+                        className="max-w-full h-auto rounded-lg shadow-md my-4"
+                      />
+                    ),
+                    blockquote: ({children}) => (
+                      <blockquote className="border-l-4 border-[#D6E2B4] pl-4 italic text-gray-600 my-4">
+                        {children}
+                      </blockquote>
+                    )
+                  }}
+                >
+                  {selectedArticle.body}
+                </ReactMarkdown>
               </div>
             </div>
           </div>
