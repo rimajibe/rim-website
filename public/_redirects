@@ -1,5 +1,2 @@
 # Admin routes
 /admin/* /admin/index.html 200
-
-# SPA fallback - only for routes without file extensions
-/* /index.html 200
