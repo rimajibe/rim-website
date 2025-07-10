@@ -2,113 +2,47 @@ backend:
   name: git-gateway
   branch: main
 
-# Configuration locale
 locale: fr
 
-# Dossiers pour les médias
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
 
-# Interface personnalisée
 display_url: https://dtrimajibe.com
-logo_url: https://dtrimajibe.com/rim.jpg
+logo_url: https://dtrimajibe.com/favicon.ico
 
-# Collections de contenu
 collections:
   - name: "blog"
-    label: "📝 Articles de Blog"
-    label_singular: "Article"
-    description: "Gérez vos articles de blog nutritionnel"
+    label: "Articles de Blog"
     folder: "content/blog"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    preview_path: "blog/{{slug}}"
     fields:
-      - name: title
-        label: "📌 Titre de l'article"
-        widget: string
-        hint: "Un titre accrocheur pour votre article"
-        
-      - name: date
-        label: "📅 Date de publication"
-        widget: datetime
-        default: ""
-        date_format: "DD/MM/YYYY"
-        time_format: "HH:mm"
-        format: "YYYY-MM-DD HH:mm:ss"
-        hint: "Date et heure de publication de l'article"
-        
-      - name: author
-        label: "👩‍⚕️ Auteur"
-        widget: string
-        default: "Dt. Rim Ajibe"
-        hint: "Nom de l'auteur de l'article"
-        
-      - name: tags
-        label: "🏷️ Mots-clés"
-        widget: list
-        hint: "Ajoutez des mots-clés pour faciliter la recherche (ex: nutrition, santé, recette)"
-        
-      - name: excerpt
-        label: "📄 Résumé"
-        widget: text
-        hint: "Un court résumé qui apparaîtra sur la page du blog (2-3 phrases)"
-        
-      - name: featured_image
-        label: "🖼️ Image principale"
-        widget: image
-        required: false
-        hint: "Image qui apparaîtra en en-tête de l'article"
-        
-      - name: body
-        label: "✍️ Contenu de l'article"
-        widget: markdown
-        hint: "Rédigez votre article ici. Vous pouvez utiliser la mise en forme Markdown."
-        
+      - { name: title, label: "Titre", widget: string }
+      - { name: date, label: "Date", widget: datetime }
+      - { name: author, label: "Auteur", widget: string, default: "Dt. Rim Ajibe" }
+      - { name: tags, label: "Mots-clés", widget: list }
+      - { name: excerpt, label: "Résumé", widget: text }
+      - { name: featured_image, label: "Image principale", widget: image, required: false }
+      - { name: body, label: "Contenu", widget: markdown }
+      
   - name: "resources"
-    label: "📚 Ressources"
-    label_singular: "Ressource"
-    description: "Gérez vos guides, e-books et documents téléchargeables"
+    label: "Ressources"
     folder: "content/resources"
     create: true
     extension: json
-    slug: "{{slug}}"
     fields:
-      - name: title
-        label: "📌 Nom de la ressource"
-        widget: string
-        hint: "Le nom qui apparaîtra sur votre site"
-        
-      - name: description
-        label: "📝 Description"
-        widget: text
-        hint: "Décrivez brièvement cette ressource et son utilité"
-        
+      - { name: title, label: "Nom", widget: string }
+      - { name: description, label: "Description", widget: text }
       - name: category
-        label: "📂 Catégorie"
+        label: "Catégorie"
         widget: select
         options:
-          - { label: "🥗 Guides Nutrition", value: "guides-nutrition" }
-          - { label: "🏃‍♀️ Nutrition Sportive", value: "nutrition-sportive" }
-          - { label: "⚖️ Gestion du Poids", value: "gestion-poids" }
-          - { label: "🩺 Nutrition Thérapeutique", value: "nutrition-therapeutique" }
-          - { label: "📊 Outils Pratiques", value: "outils-pratiques" }
-          - { label: "📖 E-books", value: "ebooks" }
-        hint: "Choisissez la catégorie qui correspond le mieux à votre ressource"
-        
-      - name: file
-        label: "📎 Fichier à télécharger"
-        widget: file
-        hint: "Le fichier PDF, DOC ou autre que les visiteurs pourront télécharger"
-        
-      - name: file_size
-        label: "📏 Taille du fichier"
-        widget: string
-        required: false
-        hint: "Ex: 2.5 MB (optionnel)"
-        
-      - name: pages
-        label: "📄 Nombre de pages"
-        widget: number
-        required: false
-        hint: "Nombre de pages du document (optionnel)"
+          - { label: "Guides Nutrition", value: "guides-nutrition" }
+          - { label: "Nutrition Sportive", value: "nutrition-sportive" }
+          - { label: "Gestion du Poids", value: "gestion-poids" }
+          - { label: "Nutrition Thérapeutique", value: "nutrition-therapeutique" }
+          - { label: "Outils Pratiques", value: "outils-pratiques" }
+          - { label: "E-books", value: "ebooks" }
+      - { name: file, label: "Fichier", widget: file }
+      - { name: file_size, label: "Taille du fichier", widget: string, required: false }
+      - { name: pages, label: "Nombre de pages", widget: number, required: false }
