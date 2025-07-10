@@ -23,7 +23,16 @@ function collect(dir, transform) {
 // Blog → src/content/blog.json
 const posts = collect("content/blog", (raw, file) => {
   const { data, content } = matter(raw);
-  return { ...data, slug: file.replace(/\.md$/, ""), body: content };
+  return { 
+    ...data, 
+    slug: file.replace(/\.md$/, ""), 
+    body: content,
+    // Ensure all required fields have defaults
+    author: data.author || "Dt. Rim Ajibe",
+    tags: data.tags || [],
+    excerpt: data.excerpt || "",
+    featured_image: data.featured_image || null
+  };
 });
 fs.mkdirSync("src/content", { recursive: true });
 fs.writeFileSync("src/content/blog.json", JSON.stringify(posts, null, 2));
